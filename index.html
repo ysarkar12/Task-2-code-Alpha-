@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do Web App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="header-row">
+      <h1>Task Management — Small Teams</h1>
+      <div class="auth">
+        <span id="currentUser">Not signed in</span>
+        <button id="signinBtn" onclick="showAuth()">Sign in</button>
+        <button id="signoutBtn" onclick="signOut()" style="display:none">Sign out</button>
+      </div>
+    </div>
+
+    <section class="controls">
+      <div class="members">
+        <h3>Team Members</h3>
+        <input type="text" id="memberName" placeholder="Add member name" />
+        <button onclick="addMember()">Add</button>
+        <div id="memberList"></div>
+      </div>
+
+      <div class="task-creator">
+        <h3>Create Task</h3>
+        <input type="text" id="taskInput" placeholder="Task title" />
+        <select id="assigneeSelect"><option value="">Unassigned</option></select>
+        <select id="statusSelect">
+          <option value="pending">Pending</option>
+          <option value="in-progress">In Progress</option>
+          <option value="completed">Completed</option>
+        </select>
+        <input type="datetime-local" id="taskTime" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+    </section>
+
+    <section>
+      <h3>Tasks</h3>
+      <ul id="taskList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
